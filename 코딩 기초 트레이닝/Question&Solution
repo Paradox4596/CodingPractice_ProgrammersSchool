@@ -279,3 +279,58 @@ string solution(string my_string, string overwrite_string, int s) {
 
 ----------------------------------------------------------------------------
 ----------------------------------------------------------------------------
+
+11 Question: 문자열 섞기
+https://school.programmers.co.kr/learn/courses/30/lessons/181942
+
+길이가 같은 두 문자열 str1과 str2가 주어집니다.
+
+두 문자열의 각 문자가 앞에서부터 서로 번갈아가면서 한 번씩 등장하는 문자열을 만들어 return 하는 solution 함수를 완성해 주세요.
+----------------------------------------------------------------------------
+11 MySolution: 
+
+#include <string>
+#include <vector>
+
+using namespace std;
+
+string solution(string str1, string str2) {
+    string answer = "";
+    int length = str1.length();
+
+    for (int i = 0; i < length; i++)
+    {
+        answer += str1[i];
+        answer += str2[i];
+    }
+    return answer;
+}
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+12 Question: 문자 리스트를 문자열로 변환하기
+https://school.programmers.co.kr/learn/courses/30/lessons/181941
+
+문자들이 담겨있는 배열 arr가 주어집니다. arr의 원소들을 순서대로 이어 붙인 문자열을 return 하는 solution함수를 작성해 주세요.
+----------------------------------------------------------------------------
+12 MySolution: 
+
+#include <string>
+#include <vector>
+#include <sstream>
+
+using namespace std;
+
+string solution(vector<string> arr) {
+    string answer = "";
+    std::stringstream ss;
+    for (auto i = arr.begin(); i != arr.end(); i++)
+    {
+        ss << *i;
+    }
+    answer = ss.str();
+    return answer;
+}
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
